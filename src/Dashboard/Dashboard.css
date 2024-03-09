@@ -1,0 +1,72 @@
+/* Dashboard.css */
+h2{
+  text-align: center;
+}
+.dashboard-container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+.metric-card {
+  background-color: #f0f0f0;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+}
+
+.navigation-links {
+  display: flex;
+  justify-content: space-between;
+}
+
+.navigation-links a {
+  padding: 10px 20px;
+  text-decoration: none;
+  color: #fff;
+  background-color: #007bff;
+  border-radius: 4px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.navigation-links a:hover {
+  background-color: #0056b3;
+}
+
+.total-box {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+.total-box div {
+  padding: 10px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.total-products {
+  background-color: #ff6347; /* Red color */
+  color: #000000;
+  width: 110px;
+}
+
+.total-stock{
+  background-color: #a77c0f; /* Red color */
+  color: #fff;
+  width: 110px;
+}
+
+.total-orders {
+  background-color: #3cb371; /* Green color */
+  color: #fff;
+  width: 110px;
+}
+
+h2 {
+  color: #333;
+}
