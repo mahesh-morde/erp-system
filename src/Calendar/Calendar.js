@@ -4,37 +4,39 @@ import { Link } from 'react-router-dom';
 import './Calendar.css';
 
 const Calendar = () => {
-  // Mock data for order list with delivery dates
   const [orders, setOrders] = useState([
-    { id: 1, customerName: 'Customer 1', deliveryDate: '2024-03-15' },
-    { id: 2, customerName: 'Customer 100', deliveryDate: '2024-03-20' },
+    { id: 1, customerName: 'Mahesh Morde', deliveryDate: '2024-03-30' },
+    { id: 2, customerName: 'Oreo Buscuit', deliveryDate: '2024-03-20' },
     // Add more orders as needed
   ]);
 
-  // Function to render days of the month
-  const renderCalendarDays = () => {
-    // Assuming a month view for simplicity
-    const daysInMonth = 30; // Adjust this based on the month and year
+  const [selectedDate, setSelectedDate] = useState(null);
 
-    // Array to hold the calendar days
+  const renderCalendarDays = () => {
+    const daysInMonth = 30;
     const calendarDays = [];
 
-    // Loop through each day of the month
+    const handleDayClick = (day) => {
+      // Set the selected date when a day is clicked
+      setSelectedDate(day);
+    };
+
     for (let day = 1; day <= daysInMonth; day++) {
-      // Check if there are any orders on this day
       const ordersOnDay = orders.filter((order) => {
         const deliveryDay = new Date(order.deliveryDate).getDate();
         return deliveryDay === day;
       });
 
-      // Render a list of orders for this day
       const orderList = ordersOnDay.map((order) => (
         <li key={order.id}>{order.customerName}</li>
       ));
+      
 
-      // Add the day to the calendar with orders if any
+      // Highlight the selected date
+      const dayClassName = day === selectedDate ? 'selected-day' : '';
+
       calendarDays.push(
-        <div key={day}>
+        <div key={day} onClick={() => handleDayClick(day)} className={dayClassName}>
           <span>{day}</span>
           <ul>{orderList}</ul>
         </div>
@@ -47,7 +49,20 @@ const Calendar = () => {
   return (
     <div>
       <h2>Orders Calendar View</h2>
-      {/* Calendar view displaying orders based on delivery dates */}
+      {selectedDate && (
+        <div className="selected-orders">
+          <h3>Orders on date: {selectedDate}</h3>
+          <ul>
+            {orders
+              .filter(
+                (order) => new Date(order.deliveryDate).getDate() === selectedDate
+              )
+              .map((order) => (
+                <li key={order.id}>{order.customerName}</li>
+              ))}
+          </ul>
+        </div>
+      )}
       <div className="calendar">
         <div className="calendar-header main">
           <span>Sun</span>
@@ -60,7 +75,6 @@ const Calendar = () => {
         </div>
         <div className="calendar-days main">{renderCalendarDays()}</div>
       </div>
-      
       <div className="navigation-links">
         <Link to="/">Back To Dashboard</Link>
       </div>
