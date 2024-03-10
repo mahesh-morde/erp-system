@@ -47,6 +47,18 @@ const Calendar = () => {
   return (
     <div>
       <h2>Orders Calendar View</h2>
+      <div className="calendar">
+        <div className="calendar-header main">
+          <span>Sun</span>
+          <span>Mon</span>
+          <span>Tue</span>
+          <span>Wed</span>
+          <span>Thu</span>
+          <span>Fri</span>
+          <span>Sat</span>
+        </div>
+        <div className="calendar-days main">{renderCalendarDays()}</div>
+      </div>
       {selectedDate && (
         <div className="selected-orders">
           <h3>Orders on date: {selectedDate}</h3>
@@ -61,18 +73,6 @@ const Calendar = () => {
           </ul>
         </div>
       )}
-      <div className="calendar">
-        <div className="calendar-header main">
-          <span>Sun</span>
-          <span>Mon</span>
-          <span>Tue</span>
-          <span>Wed</span>
-          <span>Thu</span>
-          <span>Fri</span>
-          <span>Sat</span>
-        </div>
-        <div className="calendar-days main">{renderCalendarDays()}</div>
-      </div>
     </div>
   );
 };
