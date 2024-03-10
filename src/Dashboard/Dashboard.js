@@ -1,5 +1,5 @@
 // src/Dashboard/Dashboard.js
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, PureComponent } from 'react';
 import './Dashboard.css';
 import {
   BsFillArchiveFill,
@@ -7,6 +7,8 @@ import {
   BsPeopleFill,
   BsFillBellFill,
 } from 'react-icons/bs';
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+
 
 const Dashboard = () => {
   // State for key metrics
@@ -33,6 +35,52 @@ const Dashboard = () => {
 
     fetchMetricsData();
   }, []);
+
+  const data = [
+    {
+      name: 'Products',
+      Jan: 4000,
+      Feb: 2400,
+      March: 2400,
+    },
+    {
+      name: 'Order',
+      Jan: 3000,
+      Feb: 1398,
+      March: 2210,
+    },
+    {
+      name: 'Stock',
+      Jan: 2000,
+      Feb: 9800,
+      March: 2290,
+    },
+    {
+      name: 'Alerts',
+      Jan: 2780,
+      Feb: 3908,
+      March: 2000,
+    },
+    {
+      name: 'Inventory',
+      Jan: 1890,
+      Feb: 4800,
+      March: 2181,
+    },
+    {
+      name: 'Customers',
+      Jan: 2390,
+      Feb: 3800,
+      March: 8000,
+    },
+    {
+      name: 'Orderstatus',
+      Jan: 3490,
+      Feb: 4300,
+      March: 3283,
+      
+    },
+  ];
 
   return (
     <div className='main-container'>
@@ -68,6 +116,30 @@ const Dashboard = () => {
           </div>
           <h1>42</h1>
         </div>
+      </div>
+
+      <div className='chart-restrict'> 
+      <ResponsiveContainer width="100%" height="100%">
+        <LineChart
+          
+          data={data}
+          margin={{
+            top: 5,
+            right: 30,
+            left: 20,
+            bottom: 5,
+          }}
+        >
+          <CartesianGrid strokeDasharray="3 3" />
+          <XAxis dataKey="name" />
+          <YAxis />
+          <Tooltip />
+          <Legend />
+          <Line type="monotone" dataKey="Jan" stroke="#8884d8" activeDot={{ r: 8 }} />
+          <Line type="monotone" dataKey="Feb" stroke="#82ca9d" />
+          <Line type="monotone" dataKey="March" stroke="#82ca9d" strokeDasharray="3 4 5 2" />
+        </LineChart>
+      </ResponsiveContainer>
       </div>
     </div>
   );

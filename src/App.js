@@ -11,6 +11,7 @@ import './App.css';
 
 const App = () => {
   return (
+    <body>
     <Router>
       <div className="app-container">
         <Header />
@@ -27,6 +28,7 @@ const App = () => {
         </div>
       </div>
     </Router>
+    </body>
   );
 };
 

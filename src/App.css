@@ -5,6 +5,11 @@
   flex-direction: column;
 }
 
+
+body{
+color: #585858;
+}
+
 .content-container {
   display: flex;
   flex-grow: 1;
