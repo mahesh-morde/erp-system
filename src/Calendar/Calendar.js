@@ -1,6 +1,5 @@
 // src/Calendar/Calendar.js
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 import './Calendar.css';
 
 const Calendar = () => {
@@ -74,9 +73,6 @@ const Calendar = () => {
           <span>Sat</span>
         </div>
         <div className="calendar-days main">{renderCalendarDays()}</div>
-      </div>
-      <div className="navigation-links">
-        <Link to="/">Back To Dashboard</Link>
       </div>
     </div>
   );

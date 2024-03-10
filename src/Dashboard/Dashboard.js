@@ -1,7 +1,12 @@
 // src/Dashboard/Dashboard.js
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import './Dashboard.css'
+import './Dashboard.css';
+import {
+  BsFillArchiveFill,
+  BsFillGrid3X3GapFill,
+  BsPeopleFill,
+  BsFillBellFill,
+} from 'react-icons/bs';
 
 const Dashboard = () => {
   // State for key metrics
@@ -30,36 +35,39 @@ const Dashboard = () => {
   }, []);
 
   return (
-    <div className="dashboard-container">
-      <h2>Dashboard</h2>
-      
-      <div className="total-box">
-        <div className="total-products">
-          <p>Total Products</p>
-          <p>{totalProducts}</p>
-        </div>
-
-        <div className="total-stock">
-          <p>Total Stock</p>
-          <p>{totalStock}</p>
-        </div>
-
-        <div className="total-orders">
-          <p>Total Orders</p>
-          <p>{totalOrders}</p>
-        </div>
+    <div className='main-container'>
+      <div className='main-title'>
+        <h3>DASHBOARD</h3>
       </div>
-      
-      <div className="metric-card">
-        {/* Display key metrics */}
-        
-      </div>
-
-      <div className="navigation-links">
-        {/* Add navigation links/buttons for Products, Calendar, and Orders */}
-        <Link to="/products">Go to Products</Link>
-        <Link to="/calendar">Go to Calendar</Link>
-        <Link to="/orders">Go to Orders</Link>
+      <div className='main-cards'>
+        <div className='card'>
+          <div className='card-inner'>
+            <h3>PRODUCTS</h3>
+            <BsFillArchiveFill className='card_icon' />
+          </div>
+          <h1>{totalProducts}</h1>
+        </div>
+        <div className='card'>
+          <div className='card-inner'>
+            <h3>ORDERS</h3>
+            <BsFillGrid3X3GapFill className='card_icon' />
+          </div>
+          <h1>{totalOrders}</h1>
+        </div>
+        <div className='card'>
+          <div className='card-inner'>
+            <h3>STOCK</h3>
+            <BsPeopleFill className='card_icon' />
+          </div>
+          <h1>{totalStock}</h1>
+        </div>
+        <div className='card'>
+          <div className='card-inner'>
+            <h3>ALERTS</h3>
+            <BsFillBellFill className='card_icon' />
+          </div>
+          <h1>42</h1>
+        </div>
       </div>
     </div>
   );

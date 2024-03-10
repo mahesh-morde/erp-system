@@ -1,6 +1,5 @@
 // src/Products/Products.js
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 import './Products.css';
 
 const Products = () => {
@@ -62,7 +61,8 @@ const Products = () => {
     });
   };
 
-  return (<div className="products-container">
+  return (
+  <div className="products-container">
   <h2>Products Management</h2>
   <hr></hr>
   <h3>Add Products</h3>
@@ -105,10 +105,6 @@ const Products = () => {
       </li>
     ))}
   </ul>
-
-  <div className="navigation-links">
-    <Link to="/">Back To Dashboard</Link>
-  </div>
 </div>
 
   );

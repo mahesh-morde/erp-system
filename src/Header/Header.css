@@ -1,0 +1,12 @@
+/* Header.css */
+.header {
+  background-color: #585858;
+  color: #fff;
+  padding: 18px;
+  text-align: center;
+  width: 100vw; /* Updated to 100vw */
+  position: fixed;
+  top: 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin: 0; /* Set margin to 0 */
+}
