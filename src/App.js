@@ -1,5 +1,5 @@
 // src/App.js
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Dashboard from './Dashboard/Dashboard';
 import Products from './Products/Products';
@@ -9,14 +9,22 @@ import Header from './Header/Header';
 import Sidebar from './Sidebar/Sidebar';
 import './App.css';
 
+
 const App = () => {
+
+  const [openSidebarToggle, setOpenSidebarToggle] = useState(false)
+
+  const OpenSidebar = () => {
+    setOpenSidebarToggle(!openSidebarToggle)
+  }
+
   return (
     <body>
     <Router>
       <div className="app-container">
-        <Header />
+        <Header OpenSidebar={OpenSidebar} />
         <div className="content-container">
-          <Sidebar />
+          <Sidebar openSidebarToggle={openSidebarToggle} OpenSidebar={OpenSidebar} />
           <div className="main-content">
             <Routes>
               <Route path="/" element={<Dashboard />} />

@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import './Calendar.css';
 
 const Calendar = () => {
-  const [orders, setOrders] = useState([
+  const [orders] = useState([
     { id: 1, customerName: 'Mahesh Morde', deliveryDate: '2024-03-30' },
     { id: 2, customerName: 'Oreo Buscuit', deliveryDate: '2024-03-20' },
     // Add more orders as needed

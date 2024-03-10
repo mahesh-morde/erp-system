@@ -1,5 +1,5 @@
 // src/Dashboard/Dashboard.js
-import React, { useState, useEffect, PureComponent } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Dashboard.css';
 import {
   BsFillArchiveFill,
@@ -7,7 +7,19 @@ import {
   BsPeopleFill,
   BsFillBellFill,
 } from 'react-icons/bs';
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import {
+  BarChart,
+  Bar,
+  Rectangle,
+  LineChart,
+  Line,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  Legend,
+  ResponsiveContainer,
+} from 'recharts';
 
 
 const Dashboard = () => {
@@ -85,39 +97,40 @@ const Dashboard = () => {
   return (
     <div className='main-container'>
       <div className='main-title'>
-        <h3>DASHBOARD</h3>
+        <h2>DASHBOARD</h2>
       </div>
       <div className='main-cards'>
         <div className='card'>
-          <div className='card-inner'>
-            <h3>PRODUCTS</h3>
-            <BsFillArchiveFill className='card_icon' />
-          </div>
+          
+            <h3>PRODUCTS <BsFillArchiveFill className='card_icon' /></h3>
+            
+          
           <h1>{totalProducts}</h1>
         </div>
         <div className='card'>
-          <div className='card-inner'>
-            <h3>ORDERS</h3>
-            <BsFillGrid3X3GapFill className='card_icon' />
-          </div>
+         
+            <h3>ORDERS <BsFillGrid3X3GapFill className='card_icon' /></h3>
+            
+          
           <h1>{totalOrders}</h1>
         </div>
         <div className='card'>
-          <div className='card-inner'>
-            <h3>STOCK</h3>
-            <BsPeopleFill className='card_icon' />
-          </div>
+          
+            <h3>STOCK <BsPeopleFill className='card_icon' /></h3>
+            
+          
           <h1>{totalStock}</h1>
         </div>
         <div className='card'>
-          <div className='card-inner'>
-            <h3>ALERTS</h3>
-            <BsFillBellFill className='card_icon' />
-          </div>
+         
+            <h3>ALERTS <BsFillBellFill className='card_icon' /></h3>
+            
+          
           <h1>42</h1>
         </div>
       </div>
 
+      <div className='charts'>
       <div className='chart-restrict'> 
       <ResponsiveContainer width="100%" height="100%">
         <LineChart
@@ -137,10 +150,37 @@ const Dashboard = () => {
           <Legend />
           <Line type="monotone" dataKey="Jan" stroke="#8884d8" activeDot={{ r: 8 }} />
           <Line type="monotone" dataKey="Feb" stroke="#82ca9d" />
-          <Line type="monotone" dataKey="March" stroke="#82ca9d" strokeDasharray="3 4 5 2" />
+          <Line type="monotone" dataKey="March" stroke="#ff0000" />
+
         </LineChart>
       </ResponsiveContainer>
       </div>
+
+      <div className='chart-restrict'> 
+      <ResponsiveContainer width="100%" height="100%">
+        <BarChart
+          width={500}
+          height={300}
+          data={data}
+          margin={{
+            top: 5,
+            right: 30,
+            left: 20,
+            bottom: 5,
+          }}
+        >
+          <CartesianGrid strokeDasharray="3 3" />
+          <XAxis dataKey="name" />
+          <YAxis />
+          <Tooltip />
+          <Legend />
+          <Bar dataKey="Jan" fill="#8884d8" activeBar={<Rectangle fill="pink" stroke="blue" />} />
+          <Bar dataKey="Feb" fill="#82ca9d" activeBar={<Rectangle fill="gold" stroke="purple" />} />
+          <Bar dataKey="March" fill="#ff0000" activeBar={<Rectangle fill="gold" stroke="purple" />} />
+        </BarChart>
+      </ResponsiveContainer>
+        </div>
+    </div>
     </div>
   );
 };
