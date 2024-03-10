@@ -21,19 +21,15 @@ const App = () => {
   return (
     <body>
     <Router>
-      <div className="app-container">
+      <div className="grid-container">
         <Header OpenSidebar={OpenSidebar} />
-        <div className="content-container">
-          <Sidebar openSidebarToggle={openSidebarToggle} OpenSidebar={OpenSidebar} />
-          <div className="main-content">
-            <Routes>
-              <Route path="/" element={<Dashboard />} />
-              <Route path="/products" element={<Products />} />
-              <Route path="/orders" element={<Orders />} />
-              <Route path="/calendar" element={<Calendar />} />
-            </Routes>
-          </div>
-        </div>
+        <Sidebar openSidebarToggle={openSidebarToggle} OpenSidebar={OpenSidebar} />         
+          <Routes>
+            <Route path="/" element={<Dashboard />} />
+            <Route path="/products" element={<Products />} />
+            <Route path="/orders" element={<Orders />} />
+            <Route path="/calendar" element={<Calendar />} />
+          </Routes>
       </div>
     </Router>
     </body>
@@ -41,3 +37,7 @@ const App = () => {
 };
 
 export default App;
+
+
+
+

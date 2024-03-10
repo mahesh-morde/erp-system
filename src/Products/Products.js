@@ -1,6 +1,5 @@
 // src/Products/Products.js
 import React, { useState } from 'react';
-import './Products.css';
 
 const Products = () => {
   // Mock data for product list

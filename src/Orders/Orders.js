@@ -1,8 +1,6 @@
 // src/Orders/Orders.js
 import React, { useState } from 'react';
 
-import './Orders.css';
-
 const Orders = () => {
   // Mock data for order list
   const [orders, setOrders] = useState([

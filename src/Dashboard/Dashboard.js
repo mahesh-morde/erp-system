@@ -1,6 +1,5 @@
 // src/Dashboard/Dashboard.js
 import React, { useState, useEffect } from 'react';
-import './Dashboard.css';
 import {
   BsFillArchiveFill,
   BsFillGrid3X3GapFill,

@@ -1,12 +1,9 @@
-
-// components/Header.js
-import React from 'react';
-import './Header.css';
+import React from 'react'
 import 
  {BsFillBellFill, BsFillEnvelopeFill, BsPersonCircle, BsSearch, BsJustify}
  from 'react-icons/bs'
 
-const Header = ({OpenSidebar}) => {
+function Header({OpenSidebar}) {
   return (
     <header className='header'>
         <div className='menu-icon'>
@@ -21,7 +18,7 @@ const Header = ({OpenSidebar}) => {
             <BsPersonCircle className='icon'/>
         </div>
     </header>
-  );
-};
+  )
+}
 
-export default Header;
+export default Header
