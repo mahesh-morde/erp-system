@@ -37,10 +37,10 @@ const Orders = () => {
   };
 
   return (
+    <div class="order-align">
     <div className="orders-container">
-      <h2>Orders Management</h2>
-      <br></br>
-      <br></br>
+      <h1>Orders Management</h1>
+      
       {selectedOrder ? (
         <div className="order-details">
           <h3>Order Details</h3>
@@ -66,7 +66,7 @@ const Orders = () => {
       )}
      
     </div>
-    
+    </div>
   );
 };
 

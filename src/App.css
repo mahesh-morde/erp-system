@@ -29,7 +29,7 @@ body {
 
 .grid-container {
   display: grid;
-  grid-template-columns: 260px 1fr 1fr 1fr;
+  grid-template-columns: 260px 3fr;
   grid-template-rows: 0.2fr 3fr;
   grid-template-areas:
     'sidebar header header header'
@@ -237,7 +237,6 @@ body {
   color: #fff;
   border-radius: 5px;
   width: 80%; /* Adjust the width as needed */ 
-  max-width: 600px; /* Set a max-width to maintain readability */ 
 }
 
 .products-container h2, h3 {
@@ -313,8 +312,19 @@ body {
 
 /* Base styles for the calendar */
 .calendar {
-  width: 100%;
+  max-width: 1000px;
   margin-top: 20px;
+}
+
+.Calendar-align{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.calendar h1{
+  color: #ffffff;
+  text-align: center;
 }
 
 .calendar-header {
@@ -380,4 +390,69 @@ body {
   .calendar-days {
     grid-template-columns: repeat(2, 1fr); /* Adjust the number of columns for extra small screens */
   }
+}
+
+
+
+
+
+
+
+/* css for orders */
+/* src/Orders/Orders.css */
+
+.orders-container {
+  max-width: 1000px;
+  margin-top: 20px;
+}
+
+.order-align{
+  display: flex;
+  flex-direction: column;
+}
+
+.orders-container h1 {
+  color: #ffffff;
+  text-align: center;
+}
+
+.order-item {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
+  list-style: none;
+}
+
+.order-actions button {
+  margin-right: 5px;
+}
+
+.order-details {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.view-details-btn {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.shipped-btn {
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.delete-btn {
+  background-color: #dc3545;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
 }

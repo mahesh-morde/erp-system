@@ -3,8 +3,25 @@ import React, { useState } from 'react';
 
 const Calendar = () => {
   const [orders] = useState([
-    { id: 1, customerName: 'Mahesh Morde', deliveryDate: '2024-03-30' },
-    { id: 2, customerName: 'Oreo Buscuit', deliveryDate: '2024-03-20' },
+    {
+      id: 1,
+      orderDate: '2024-03-01',
+      expectedDeliveryDate: '2024-03-10',
+      customerName: 'Mahesh',
+      products: [
+        { name: 'Product A', quantity: 2, price: 25.99 },
+        { name: 'Product B', quantity: 1, price: 15.49 },
+      ],
+    },
+    {
+      id: 2,
+      orderDate: '2024-03-15',
+      expectedDeliveryDate: '2024-03-25',
+      customerName: 'Jack',
+      products: [
+        { name: 'Product C', quantity: 3, price: 10.99 },
+      ],
+    },
     // Add more orders as needed
   ]);
 
@@ -21,14 +38,13 @@ const Calendar = () => {
 
     for (let day = 1; day <= daysInMonth; day++) {
       const ordersOnDay = orders.filter((order) => {
-        const deliveryDay = new Date(order.deliveryDate).getDate();
+        const deliveryDay = new Date(order.expectedDeliveryDate).getDate();
         return deliveryDay === day;
       });
 
       const orderList = ordersOnDay.map((order) => (
         <li key={order.id}>{order.customerName}</li>
       ));
-      
 
       // Highlight the selected date
       const dayClassName = day === selectedDate ? 'selected-day' : '';
@@ -45,9 +61,9 @@ const Calendar = () => {
   };
 
   return (
-    <div>
-      <h2>Orders Calendar View</h2>
+    <div className="Calendar-align">
       <div className="calendar">
+        <h1>Orders Calendar View</h1>
         <div className="calendar-header main">
           <span>Sun</span>
           <span>Mon</span>
@@ -65,10 +81,23 @@ const Calendar = () => {
           <ul>
             {orders
               .filter(
-                (order) => new Date(order.deliveryDate).getDate() === selectedDate
+                (order) =>
+                  new Date(order.expectedDeliveryDate).getDate() === selectedDate
               )
               .map((order) => (
-                <li key={order.id}>{order.customerName}</li>
+                <li key={order.id}>
+                  <strong>Order ID:</strong> {order.id}<br />
+                  <strong>Order Date:</strong> {order.orderDate}<br />
+                  <strong>Expected Delivery Date:</strong> {order.expectedDeliveryDate}<br />
+                  <strong>Products:</strong>
+                  <ul>
+                    {order.products.map((product, index) => (
+                      <li key={index}>
+                        {product.name} - Quantity: {product.quantity} - Price: ${product.price}
+                      </li>
+                    ))}
+                  </ul>
+                </li>
               ))}
           </ul>
         </div>
