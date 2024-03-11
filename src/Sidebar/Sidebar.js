@@ -23,17 +23,17 @@ function Sidebar({ openSidebarToggle, OpenSidebar }) {
         </li>
         <li className='sidebar-list-item'>
           <Link to="/products">
-            <BsFillArchiveFill className='icon' /> Products
-          </Link>
-        </li>
-        <li className='sidebar-list-item'>
-          <Link to="/calendar">
-            <BsFillGrid3X3GapFill className='icon' /> Calendar
+            <BsFillArchiveFill className='icon' /> Products Management
           </Link>
         </li>
         <li className='sidebar-list-item'>
           <Link to="/orders">
-            <BsPeopleFill className='icon' /> Orders
+            <BsPeopleFill className='icon' /> Orders Management
+          </Link>
+        </li>
+        <li className='sidebar-list-item'>
+          <Link to="/calendar">
+            <BsFillGrid3X3GapFill className='icon' /> Orders Calendar View
           </Link>
         </li>
         <li className='sidebar-list-item'>

@@ -239,8 +239,12 @@ body {
   width: 80%; /* Adjust the width as needed */ 
 }
 
-.products-container h2, h3 {
+.products-container h1, h2, h3 {
   color: #fff;
+}
+
+.products-container h1{
+  text-align: center;
 }
 
 .add-product-form label {
@@ -361,12 +365,40 @@ body {
   background-color: #f0f0f0;
 }
 
+
 .selected-orders {
+  background-color: #263043;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
   margin-top: 20px;
 }
 
 .selected-orders h3 {
+  font-size: 1.5rem;
   margin-bottom: 10px;
+}
+
+.selected-orders ul {
+  list-style: none;
+  padding: 0;
+}
+
+.selected-orders li {
+  margin-bottom: 15px;
+}
+
+.selected-orders strong {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.selected-orders ul {
+  padding-left: 20px;
+}
+
+.selected-orders ul li {
+  margin-bottom: 5px;
 }
 
 /* Media Queries for Responsiveness */
@@ -401,9 +433,12 @@ body {
 /* css for orders */
 /* src/Orders/Orders.css */
 
-.orders-container {
-  max-width: 1000px;
+
+.order-align{
   margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .orders-container h1 {
@@ -416,6 +451,7 @@ body {
   padding: 10px;
   margin-bottom: 10px;
   list-style: none;
+  text-align: center;
 }
 
 .order-actions button {
@@ -451,7 +487,6 @@ body {
   padding: 5px 10px;
   cursor: pointer;
 }
-
 
 
 

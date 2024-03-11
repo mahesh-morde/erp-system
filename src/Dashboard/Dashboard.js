@@ -128,7 +128,8 @@ const Dashboard = () => {
           <h1>42</h1>
         </div>
       </div>
-
+      <br></br>
+      <h2>SALES REPORTS</h2>
       <div className='charts'>
       <div className='chart-restrict'> 
       <ResponsiveContainer width="100%" height="100%">

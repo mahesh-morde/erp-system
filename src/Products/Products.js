@@ -62,8 +62,7 @@ const Products = () => {
 
   return (
   <div className="products-container">
-  <h2>Products Management</h2>
-  <hr></hr>
+  <h1>Products Management</h1>
   <h3>Add Products</h3>
   <hr></hr>
   {/* Form for adding products */}

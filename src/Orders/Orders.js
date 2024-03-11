@@ -38,34 +38,33 @@ const Orders = () => {
 
   return (
     <div class="order-align">
-    <div className="orders-container">
-      <h1>Orders Management</h1>
-      
-      {selectedOrder ? (
-        <div className="order-details">
-          <h3>Order Details</h3>
-          <p>Order ID: {selectedOrder.id}</p>
-          <p>Customer: {selectedOrder.customerName}</p>
-          <p>Order Date: {selectedOrder.orderDate}</p>
-          <p>Status: {selectedOrder.status}</p>
-          <button onClick={handleCloseOrderDetails}>Close Details</button>
-        </div>
-      ) : (
-        <ul className="orders-list">
-          {orders.map((order) => (
-            <li key={order.id} className="order-item">
-              Order ID: {order.id} - Customer: {order.customerName} - Order Date: {order.orderDate} - Status: {order.status}
-              <div className="order-actions">
-                <button className="view-details-btn" onClick={() => handleViewOrderDetails(order.id)}>View Details</button>
-                <button className="shipped-btn" onClick={() => handleUpdateOrderStatus(order.id, 'Shipped')}>Mark as Shipped</button>
-                <button className="delete-btn" onClick={() => handleDeleteOrder(order.id)}>Delete</button>
-              </div>
-            </li>
-          ))}
-        </ul>
-      )}
-     
-    </div>
+      <div className="orders-container">
+        <h1>Orders Management</h1>
+        
+        {selectedOrder ? (
+          <div className="order-details">
+            <h3>Order Details</h3>
+            <p>Order ID: {selectedOrder.id}</p>
+            <p>Customer: {selectedOrder.customerName}</p>
+            <p>Order Date: {selectedOrder.orderDate}</p>
+            <p>Status: {selectedOrder.status}</p>
+            <button onClick={handleCloseOrderDetails}>Close Details</button>
+          </div>
+        ) : (
+          <ul className="orders-list">
+            {orders.map((order) => (
+              <li key={order.id} className="order-item">
+                Order ID: {order.id} - Customer: {order.customerName} - Order Date: {order.orderDate} - Status: {order.status}
+                <div className="order-actions">
+                  <button className="view-details-btn" onClick={() => handleViewOrderDetails(order.id)}>View Details</button>
+                  <button className="shipped-btn" onClick={() => handleUpdateOrderStatus(order.id, 'Shipped')}>Mark as Shipped</button>
+                  <button className="delete-btn" onClick={() => handleDeleteOrder(order.id)}>Delete</button>
+                </div>
+              </li>
+            ))}
+          </ul>
+        )}
+      </div>
     </div>
   );
 };
