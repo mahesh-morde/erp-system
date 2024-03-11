@@ -7,6 +7,9 @@ import Orders from './Orders/Orders';
 import Calendar from './Calendar/Calendar';
 import Header from './Header/Header';
 import Sidebar from './Sidebar/Sidebar';
+import Inventory from './Inventory/Inventory';
+import Reports from './Reports/Reports';
+import Settings from './Settings/Settings';
 import './App.css';
 
 
@@ -29,6 +32,9 @@ const App = () => {
             <Route path="/products" element={<Products />} />
             <Route path="/orders" element={<Orders />} />
             <Route path="/calendar" element={<Calendar />} />
+            <Route path="/inventory" element={<Inventory />} />
+            <Route path="/reports" element={<Reports />} />
+            <Route path="/Settings" element={<Settings />} />
           </Routes>
       </div>
     </Router>
