@@ -3,6 +3,12 @@
 
 This project is a simplified ERP (Enterprise Resource Planning) system implemented using React. It allows users to manage products, orders, and provides a dashboard for an overview of key metrics.
 
+## Experience the live demo here
+
+[erp-system-ibh5.onrender.com](https://erp-system-ibh5.onrender.com)
+
+## Video Tutorial
+[Watch the demo](https://youtu.be/jBqRmSECge0)
 
 ## Installation
 
@@ -49,6 +55,3 @@ To run the ERP System locally, follow these steps :
 #### Orders Calendar View : 
 
 ![App Screenshot](https://res.cloudinary.com/dpduqkvf0/image/upload/v1710423101/ERP%20System/mcc62ocd4b91emevhrur.png)
-## Demo
-
-https://youtu.be/jBqRmSECge0
