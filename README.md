@@ -3,11 +3,11 @@
 
 This project is a simplified ERP (Enterprise Resource Planning) system implemented using React. It allows users to manage products, orders, and provides a dashboard for an overview of key metrics.
 
-## Demonstration video
+## Experience the live website here
 
 [erp-system-ibh5.onrender.com](https://erp-system-ibh5.onrender.com)
 
-## Video Tutorial
+## Demonstration video
 [Watch the demo](https://youtu.be/jBqRmSECge0)
 
 ## Installation
